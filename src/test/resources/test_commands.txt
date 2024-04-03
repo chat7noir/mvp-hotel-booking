@@ -1,0 +1,11 @@
+# Search for the hotels in Paris
+> curl -v localhost:8082/mvp-hotel-booking/hotels/destination/paris
+
+# Search for the hotels which city name contains "H"
+> curl -v localhost:8082/mvp-hotel-booking/hotels/destination-search/h
+
+# Get details for Booking {id=101}
+> curl -v localhost:8082/mvp-hotel-booking/bookings/101
+
+> curl -X POST localhost:8082/mvp-hotel-booking/bookings/new -H 'Content-type:application/json' -d '{"customer":{"id":"1"}, "hotel":{"id":"32"}, "beginDate":"2024-04-28", "days":"5", "guests":"1", "price":"123.45", "details":"Quick storage test"}'
+
