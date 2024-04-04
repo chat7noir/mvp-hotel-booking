@@ -15,7 +15,6 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,7 +28,6 @@ import lombok.ToString;
  */
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Entity
@@ -61,5 +59,15 @@ public class Customer {
 	@ToString.Exclude
 	@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
 	private List<Booking> bookings;
+
+	public Customer(long id, String firstname, String lastname, String phone, String address, City city) {
+		super();
+		this.id = id;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.phone = phone;
+		this.address = address;
+		this.city = city;
+	}
 
 }

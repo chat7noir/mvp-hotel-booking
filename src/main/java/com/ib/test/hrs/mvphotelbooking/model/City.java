@@ -14,7 +14,6 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,7 +27,6 @@ import lombok.ToString;
  */
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -54,5 +52,13 @@ public class City {
 	@ToString.Exclude
 	@OneToMany(mappedBy = "city", fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
 	private List<Hotel> hotels;
+
+	public City(long id, String postalCode, String name, String state) {
+		super();
+		this.id = id;
+		this.postalCode = postalCode;
+		this.name = name;
+		this.state = state;
+	}
 
 }

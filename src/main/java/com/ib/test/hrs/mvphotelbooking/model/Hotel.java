@@ -28,7 +28,6 @@ import lombok.ToString;
  */
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Entity
@@ -57,5 +56,14 @@ public class Hotel {
 	@ToString.Exclude
 	@OneToMany(mappedBy = "hotel", fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
 	private List<Booking> bookings;
+
+	public Hotel(long id, String name, String description, String address, City city) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.address = address;
+		this.city = city;
+	}
 
 }
