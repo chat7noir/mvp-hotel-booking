@@ -41,8 +41,8 @@ public class BookingServiceImplTests {
 
 	private static final City MOCK_CITY_1 = new City(7L, "12345", "Mocking-City", "Mockistan");
 	private static final City MOCK_CITY_2 = new City(8L, "67890", "Mocking-Destination", "New Mocking Islands");
-	private static final Customer MOCK_CUSTOMER = new Customer(77L, "Gus", "TOMER", "0987654321", "Mocking address", MOCK_CITY_1);
-	private static final Hotel MOCK_HOTEL = new Hotel(777L, null, null, null, MOCK_CITY_2);
+	private static final Customer MOCK_CUSTOMER = new Customer(77L, "Gus", "TOMER", "0987654321", "Mocking customer address", MOCK_CITY_1);
+	private static final Hotel MOCK_HOTEL = new Hotel(777L, "Mocking Palace", "Mocking desc", "Mocking hotel address", MOCK_CITY_2);
 	private static final Booking SAVED_MOCK_BOOKING = new Booking(VALID_BOOKING_ID, MOCK_CUSTOMER, MOCK_HOTEL, BOOKING_BEGIN_DATE, BOOKING_DAYS, 3, BOOKING_PRICE, BOOKING_DETAILS);
 	private static final Booking NEW_MOCK_BOOKING = new Booking(MOCK_CUSTOMER, MOCK_HOTEL, BOOKING_BEGIN_DATE, BOOKING_DAYS, 3, BOOKING_PRICE, BOOKING_DETAILS);
 

@@ -59,8 +59,12 @@ public class Hotel {
 	private List<Booking> bookings;
 
 	public Hotel(long id, String name, String description, String address, City city) {
-		super();
+		this(name, description, address, city);
 		this.id = id;
+	}
+
+	public Hotel(String name, String description, String address, City city) {
+		super();
 		this.name = name;
 		this.description = description;
 		this.address = address;
