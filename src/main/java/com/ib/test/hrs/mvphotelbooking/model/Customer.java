@@ -15,6 +15,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -30,6 +31,7 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
+@EqualsAndHashCode(of = { "id", "firstname", "lastname", "phone" })
 @Entity
 @Table(name = "customer")
 public class Customer {
