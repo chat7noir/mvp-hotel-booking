@@ -11,6 +11,11 @@ import com.ib.test.hrs.mvphotelbooking.dao.HotelDAO;
 import com.ib.test.hrs.mvphotelbooking.model.Hotel;
 import com.ib.test.hrs.mvphotelbooking.service.HotelService;
 
+/**
+ * Basic implementation of the service interface for the {@link Hotel} entity.
+ * 
+ * @author Igal BITAN
+ */
 @Service
 public class HotelServiceImpl implements HotelService {
 
@@ -21,6 +26,7 @@ public class HotelServiceImpl implements HotelService {
 
 	@Override
 	public Hotel getById(long id) {
+		logger.debug("Get the hotel with id = {}", id);
 		return this.hotelDAO.getById(id);
 	}
 

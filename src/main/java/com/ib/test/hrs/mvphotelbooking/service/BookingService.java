@@ -3,19 +3,21 @@ package com.ib.test.hrs.mvphotelbooking.service;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.EntityNotFoundException;
+
 import com.ib.test.hrs.mvphotelbooking.model.Booking;
 import com.ib.test.hrs.mvphotelbooking.model.Customer;
 import com.ib.test.hrs.mvphotelbooking.model.Hotel;
 
 /**
- * Service pour l'entité {@link Booking}
+ * Service interface for the {@link Booking} entity
  * 
  * @author Igal BITAN
  */
 public interface BookingService {
 
 	/**
-	 * Create and save a booking entity.
+	 * Create and save a booking entity with all its fields in parameter.
 	 * 
 	 * @param customer  the customer who books
 	 * @param hotel     the hotel booked
@@ -32,13 +34,25 @@ public interface BookingService {
 	 * Save a booking entity.
 	 * 
 	 * @param booking the {@link Booking} entity to save
+	 * @return the saved {@link Booking} entity
 	 */
 	Booking save(Booking booking);
 
-	/** @return the booking by its id */
-	Booking getById(long id);
+	/**
+	 * Retrieve the {@link Booking} entity from its id.
+	 * 
+	 * @param id the specified booking id
+	 * @return the booking by its id
+	 * @throws EntityNotFoundException if there is no {@link Booking} entity with the specified id
+	 */
+	Booking getById(long id) throws EntityNotFoundException;
 
-	/** @return all the bookings for a specified customer id */
+	/**
+	 * Retrieve all the bookings of a specified customer.
+	 * 
+	 * @param customerId the specified customer id
+	 * @returnthe list of {@link Booking} entities linked to the specified customer
+	 */
 	List<Booking> getAllByCustomerId(long customerId);
 
 }

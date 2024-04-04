@@ -21,8 +21,22 @@ import com.ib.test.hrs.mvphotelbooking.model.Booking;
 @Component
 public interface BookingDAO extends JpaRepository<Booking, Long> {
 
+	// Unused for the moment
+	/**
+	 * Request with search criteria and paging options.
+	 * 
+	 * @param specification the search criteria
+	 * @param pageable      the paging options
+	 * @return the page with the list of {@link Booking} results of the request
+	 */
 	Page<Booking> findAll(Specification<Booking> specification, Pageable pageable);
 
+	/**
+	 * Request all the bookings of a specified customer.
+	 * 
+	 * @param customerId the specified customer id
+	 * @returnthe list of {@link Booking} entities linked to the specified customer
+	 */
 	@Query(nativeQuery = true, value = "SELECT * FROM booking WHERE customer_id = :customerId")
 	List<Booking> findByCustomerId(long customerId);
 

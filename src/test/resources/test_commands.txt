@@ -1,3 +1,5 @@
+Here are some CURL commands to test the API:
+
 # Search for the hotels in Paris
 > curl -v localhost:8082/mvp-hotel-booking/hotels/destination/paris
 
